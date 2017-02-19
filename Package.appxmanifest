@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
+  <Identity Name="XXXXXXXXXXXX.LocalContacts" Publisher="CN=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" Version="1.0.0.5" />
+  <mp:PhoneIdentity PhoneProductId="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" PhonePublisherId="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" />
+  <Properties>
+    <DisplayName>Local Contacts</DisplayName>
+    <PublisherDisplayName>XXXXXXXXXXXX</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.3.1</OSMinVersion>
+    <OSMaxVersionTested>6.3.1</OSMaxVersionTested>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="x7e01e995yc14by46d8yb488y4dbe744c7bb5x" Executable="AGHost.exe" EntryPoint="MainPage.xaml">
+      <m3:VisualElements DisplayName="Local Contacts" Square150x150Logo="Assets\SquareTile150x150.png" Square44x44Logo="Assets\Logo.png" Description="Local Contacts Manager using XML files." ForegroundText="light" BackgroundColor="#464646" ToastCapable="false">
+        <m3:DefaultTile Square71x71Logo="Assets\SquareTile71x71.png">
+        </m3:DefaultTile>
+        <m3:SplashScreen Image="Assets\SplashScreen.png" />
+      </m3:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <m3:Capability Name="contacts" />
+    <Capability Name="removableStorage" />
+  </Capabilities>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>AgHostSvcs.dll</Path>
+        <ActivatableClass ActivatableClassId="AgHost.BackgroundTask" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+</Package>
